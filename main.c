@@ -6,7 +6,7 @@
 /*   By: usuario42 <usuario42@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/23 17:55:01 by usuario42        ###   ########.fr       */
+/*   Updated: 2023/02/23 19:14:04 by usuario42        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,18 @@ int ft_checknumber(int ac, char **av)
 	int	c;
 	int i;
 
-	c = 0;
 	i = 1;
 	while (ac > 1)
 	{
+		c = 0;
+		if (av[i][c] == '-')
+			c++;
 		while (av[i][c] != '\0')
 		{
 			if (!ft_isdigit(av[i][c]))
+			{
 				return(0);
+			}	
 			c++;	
 		}
 		i++;
