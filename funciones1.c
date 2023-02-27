@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   funciones1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario42 <usuario42@student.42.fr>        +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/23 13:44:24 by usuario42        ###   ########.fr       */
+/*   Updated: 2023/02/27 11:38:28 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,19 @@ size_t	ft_strlen(const char *s)
 	while (s[length] != '\0')
 		length++;
 	return (length);
+}
+
+char	*ft_strcpy(char *dst, const char *src)
+{
+	size_t	copier;
+
+	copier = 0;
+	dst = malloc(sizeof(char) * ft_strlen(src) + 1);
+	while (src[copier] != '\0')
+	{
+		dst[copier] = src[copier];
+		copier++;
+	}
+	dst[copier] = '\0';
+	return (dst);
 }

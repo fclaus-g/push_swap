@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario42 <usuario42@student.42.fr>        +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/23 19:14:04 by usuario42        ###   ########.fr       */
+/*   Updated: 2023/02/27 11:47:49 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ void	write_error(void)
 	write (1, "Error\n", 6);
 }
 
-int ft_checknumber(int ac, char **av)
+int ft_checknumber(char **av)
 {
 	int	c;
 	int i;
 
 	i = 1;
-	while (ac > 1)
+	while (av[i] != NULL)
 	{
 		c = 0;
-		if (av[i][c] == '-')
+		if (av[i][c] == '-' || av[i][c] == '+')
 			c++;
 		while (av[i][c] != '\0')
 		{
@@ -37,19 +37,17 @@ int ft_checknumber(int ac, char **av)
 			c++;	
 		}
 		i++;
-		ac--;
 	}
 	return (1);
 }
-int	ft_checkinput(int ac, char **av)
+int	ft_checkinput(char **av)
 {
-	if (!ft_checknumber(ac, av))
+	if (!ft_checknumber(av))
 		return(0);
-	
 	return(1);
 }
 
-static int	ft_countwords(const char *str, char c)
+/*static int	ft_countwords(const char *str, char c)
 {
 	int	nword;
 	int	flag;
@@ -70,24 +68,44 @@ static int	ft_countwords(const char *str, char c)
 		count++;
 	}
 	return (nword);
-}
-
+*/
 
 int	main(int ac, char **av)
 {
+	char **str;
+	int i;
 
+	i = 0;
 	if (ac < 2)
 		return(write_error(),0);
 	if (ac == 2)
 	{
-		ac = ft_countwords(av[1], ' ');
-		av = ft_split(av[1], ' ');
+		str = ft_split(av[1], ' ');
+		printf("%d\n", ac);
 	}
-	if (!ft_checkinput(ac, av))
+	else 
+	{
+		str = malloc(sizeof(char*) * ac);
+		if (!str)
+			return(0);
+		while (av[i + 1] != NULL)
+		{
+			str[i] = ft_strcpy(str[i], av[i + 1]);
+			i++;
+		}
+		str[i] = NULL;
+	}
+	if (!ft_checknumber(str))
+		return (write_error() ,0);
+	
+	/*printf("%s\n", str[0]);
+	printf("%s\n", str[1]);
+	printf("%s\n", str[2]);
+	if (!ft_checkinput(str))
 	{
 		printf("%d\n",ft_checkinput(ac, av));
 		write_error();
-	}	
+	}*/	
 	return (0);
 		
 }

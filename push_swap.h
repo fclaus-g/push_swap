@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario42 <usuario42@student.42.fr>        +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:27:55 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/23 09:58:33 by usuario42        ###   ########.fr       */
+/*   Updated: 2023/02/27 11:25:31 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft-main/libft.h"
+#include "../libft/libft.h"
 
 //definimos una estructura donde alojaremos los int 
 typedef struct s_pila
@@ -26,6 +26,7 @@ typedef struct s_pila
 	int cost_b;
 	
 }t_pila;
+char	*ft_strcpy(char *dst, const char *src);
 
 
 # endif
