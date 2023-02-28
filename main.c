@@ -6,48 +6,21 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/27 11:47:49 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:02:34 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
-}
 
-int ft_checknumber(char **av)
-{
-	int	c;
-	int i;
-
-	i = 1;
-	while (av[i] != NULL)
-	{
-		c = 0;
-		if (av[i][c] == '-' || av[i][c] == '+')
-			c++;
-		while (av[i][c] != '\0')
-		{
-			if (!ft_isdigit(av[i][c]))
-			{
-				return(0);
-			}	
-			c++;	
-		}
-		i++;
-	}
-	return (1);
-}
-int	ft_checkinput(char **av)
+/*int	ft_checkinput(char **av)
 {
 	if (!ft_checknumber(av))
 		return(0);
 	return(1);
 }
 
-/*static int	ft_countwords(const char *str, char c)
+static int	ft_countwords(const char *str, char c)
 {
 	int	nword;
 	int	flag;
@@ -72,7 +45,7 @@ int	ft_checkinput(char **av)
 
 int	main(int ac, char **av)
 {
-	char **str;
+	t_box	box;
 	int i;
 
 	i = 0;
@@ -80,23 +53,28 @@ int	main(int ac, char **av)
 		return(write_error(),0);
 	if (ac == 2)
 	{
-		str = ft_split(av[1], ' ');
+		box.arg = ft_split(av[1], ' ');
 		printf("%d\n", ac);
 	}
 	else 
 	{
-		str = malloc(sizeof(char*) * ac);
-		if (!str)
+		box.arg = malloc(sizeof(char*) * ac);
+		if (!box.arg)
 			return(0);
 		while (av[i + 1] != NULL)
 		{
-			str[i] = ft_strcpy(str[i], av[i + 1]);
+			box.arg[i] = ft_strcpy(box.arg[i], av[i + 1]);
 			i++;
 		}
-		str[i] = NULL;
+		box.arg[i] = NULL;
 	}
-	if (!ft_checknumber(str))
+	if (!ft_checknumber(&box))
 		return (write_error() ,0);
+	box.stack_a = malloc(sizeof(int) * ac);
+	box.stack_b = malloc(sizeof(int) * ac);
+	box.stack_b = 0;
+	arg_to_array(&box);
+	simplifier(&box);
 	
 	/*printf("%s\n", str[0]);
 	printf("%s\n", str[1]);

@@ -1,41 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   funciones1.c                                       :+:      :+:    :+:   */
+/*   check_input_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/27 11:38:28 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:15:44 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_atoi(const char *str)
-{
-	size_t	count;
-	size_t	result;
-	int		sign;
-
-	count = 0;
-	result = 0;
-	sign = 1;
-	while ((str[count] >= 9 && str[count] <= 13) || str[count] == 32)
-		count++;
-	if (str[count] == '-' || str[count] == '+')
-	{
-		if (str[count] == '-')
-			sign = -1;
-		count++;
-	}
-	while (ft_isdigit(str[count]))
-	{
-		result = result * 10 + str[count] - 48;
-		count++;
-	}
-	return (sign * result);
-}
 
 static int	ft_countwords(const char *str, char c)
 {
