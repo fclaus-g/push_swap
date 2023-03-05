@@ -1,12 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operaciones.c                                      :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario42 <usuario42@student.42.fr>        +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 13:52:10 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/21 19:42:40 by usuario42        ###   ########.fr       */
+/*   Created: 2023/03/05 13:37:34 by fernandocla       #+#    #+#             */
+/*   Updated: 2023/03/05 13:41:53 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void    rotate_a(t_box *box)
+{
+    int c;
+
+    if(box->alen > 0)
+    {
+        
+    }
+}

@@ -3,87 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/02/28 11:02:34 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/05 13:50:57 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-/*int	ft_checkinput(char **av)
+void	printa(int *array, int len)
 {
-	if (!ft_checknumber(av))
-		return(0);
-	return(1);
-}
+	int c;
 
-static int	ft_countwords(const char *str, char c)
-{
-	int	nword;
-	int	flag;
-	int	count;
-
-	nword = 0;
-	flag = -1;
-	count = 0;
-	while (str[count])
+	c = 0;
+	while (c < len)
 	{
-		if (str[count] != c && flag < 0)
-		{
-			flag = 0;
-			nword++;
-		}
-		else if (str[count] == c)
-			flag = -1;
-		count++;
+		printf ("%d\n", array[c]);
+		c++;
 	}
-	return (nword);
-*/
+}
 
 int	main(int ac, char **av)
 {
 	t_box	box;
-	int i;
 
-	i = 0;
 	if (ac < 2)
 		return(write_error(),0);
-	if (ac == 2)
-	{
-		box.arg = ft_split(av[1], ' ');
-		printf("%d\n", ac);
-	}
-	else 
-	{
-		box.arg = malloc(sizeof(char*) * ac);
-		if (!box.arg)
-			return(0);
-		while (av[i + 1] != NULL)
-		{
-			box.arg[i] = ft_strcpy(box.arg[i], av[i + 1]);
-			i++;
-		}
-		box.arg[i] = NULL;
-	}
+	save_args(&box, ac, av);
 	if (!ft_checknumber(&box))
 		return (write_error() ,0);
 	box.stack_a = malloc(sizeof(int) * ac);
 	box.stack_b = malloc(sizeof(int) * ac);
 	box.stack_b = 0;
 	arg_to_array(&box);
-	simplifier(&box);
-	
-	/*printf("%s\n", str[0]);
-	printf("%s\n", str[1]);
-	printf("%s\n", str[2]);
-	if (!ft_checkinput(str))
-	{
-		printf("%d\n",ft_checkinput(ac, av));
-		write_error();
-	}*/	
+	if(check_repeat(&box) == 0)
+		return(write_error(), 0);
+	box.stack_a = simplifier(&box);
+	printa (box.stack_a, box.len);
 	return (0);
-		
 }
