@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:52:10 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/05 13:36:10 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/06 11:24:26 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    push_a(t_box *box)
     int i;
 
    
-    if (box->alen > 0)
+    if (box->blen > 0)
     {
         i = box->alen;
         while (i > 0)

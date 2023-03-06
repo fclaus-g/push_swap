@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:05:52 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/05 13:48:28 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/06 11:05:28 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ int check_repeat(t_box *box)
 
 	x = box->len;
 	i = 0;
+	c = 0;
 	while (i < x)
 	{
-		c = 0;
+		c = i + 1;
 		while (c < x)
 		{
 			if (box->stack_a[c] == box->stack_a[i])
@@ -69,18 +70,18 @@ int check_repeat(t_box *box)
 
 int	*simplifier(t_box *box)
 {
-	int	c;
-	int	i;
-	int	num;
+	size_t	c;
+	size_t	i;
+	size_t	num;
 	int	*aux;
 
 	i = 0;
-	num = 0;
-	aux = malloc(sizeof(int) * box ->len);
-	while (box->stack_a[i] < box->len)
+	aux = malloc(sizeof(int) * box->len);
+	while (i < (size_t)box->len)
 	{
+		num = 1;
 		c = 0;
-		while(box->stack_a[c] < box->len)
+		while(c < (size_t)box->len)
 		{
 			if (box->stack_a[i] > box->stack_a[c])
 				num++;

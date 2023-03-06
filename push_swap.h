@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:27:55 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/05 13:37:15 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/06 12:24:55 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft/libft.h"
+#include "libft/libft.h"
 # include <limits.h>
 
 //definimos una estructura donde alojaremos los int 
@@ -39,6 +39,7 @@ typedef struct s_pila
 	
 }t_pila;
 
+size_t	ft_mtrlen(char **matriz);
 void	printa(int *array, int len);
 //check_input_utils.c count-words y copywords
 char	**ft_split(char const *s, char c);

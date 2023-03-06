@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_to_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:15:12 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/04 14:05:22 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/06 12:22:14 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,16 @@ int	*ft_arraycpy(int *dst, int *array, int len)
 		c++;
 	}
 	return(dst);
+}
+
+size_t	ft_mtrlen(char **matriz)
+{
+	size_t	i;
+
+	i = 0;
+	if (matriz == NULL)
+		return (0);
+	while (matriz[i] != NULL)
+		i++;
+	return (i);	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/05 13:50:57 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/06 12:29:36 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int ac, char **av)
 	save_args(&box, ac, av);
 	if (!ft_checknumber(&box))
 		return (write_error() ,0);
-	box.stack_a = malloc(sizeof(int) * ac);
-	box.stack_b = malloc(sizeof(int) * ac);
+	box.stack_a = malloc(sizeof(int) * ft_mtrlen(box.arg));
+	box.stack_b = malloc(sizeof(int) * ft_mtrlen(box.arg));
 	box.stack_b = 0;
 	arg_to_array(&box);
 	if(check_repeat(&box) == 0)
