@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/09/23 18:57:02 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/14 18:55:34 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -30,7 +22,17 @@ size_t	ft_strlen(const char *s)
 	return (length);
 }
 
-void	write_error(void)
+/*
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+
+int main(void)
 {
-	write (1, "Error\n", 6);
-}
+	char    *str;
+
+	str = "estrella galicia";
+	printf ("%d\n", ft_strlen(str));
+	printf ("%lu\n", strlen(str));
+	return(0);
+}*/

@@ -1,53 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   save_args.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 15:08:38 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/07 11:42:43 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/20 15:41:32 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/24 12:28:45 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int save_args(t_box *box, int ac, char **av)
-{
-    int i;
-
-    i = 0;
-    if (ac == 2)
-    	box->arg = ft_split(av[1], ' ');		
-	else 
-	{
-		box->arg = malloc(sizeof(char*) * ac);
-		if (!box->arg)
-			return(0);
-		while (av[i + 1] != NULL)
-		{
-			box->arg[i] = ft_strcpy(box->arg[i], av[i + 1]);
-			i++;
-		}
-		box->arg[i] = NULL;
-	}
-    return (1);
-}
-
-char	*ft_strcpy(char *dst, const char *src)
-{
-	size_t	copier;
-
-	copier = 0;
-	dst = malloc(sizeof(char) * ft_strlen(src) + 1);
-	while (src[copier] != '\0')
-	{
-		dst[copier] = src[copier];
-		copier++;
-	}
-	dst[copier] = '\0';
-	return (dst);
-}
+#include "libft.h"
+// Reserva con malloc un array de string resultante de separar *s en 
+//substrings usando como separador 'c', el array debe terminar en un 
+//puntero NULL
+// RETURN el array de nuevas strings o NULL si falla la reserva de memoria.
+// Para ello en primer lugar contamos el tamaño que va a tener nuestro array
+// contando el num de palabras de s con una funcion usandoun mecanismo de
+// bandera
 
 static int	ft_countwords(const char *str, char c)
 {

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/11/02 14:52:37 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/11/02 15:32:07 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
+	t_list	*walker;
+
+	walker = *lst;
+	if (walker == 0)
+		*lst = new;
 	else
-		return (0);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	length;
-
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
+	{
+		walker = ft_lstlast(walker);
+		walker->next = new;
+	}
 }

@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/09/26 11:43:25 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/09/30 13:41:45 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_toupper(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
+/*
+#include <stdio.h>
+#include <ctype.h>
+#include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+int	main(void)
 {
-	int	length;
+	int	a;
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
+	a = 'a';
+	printf ("%d\n", (ft_toupper(a)));
+	a = ft_toupper(a);
+	write (1, &a, 1);
+	write (1, " ", 1);
+	return (0);	
+	el programa imprime 65 que es el valor ascii pero no el caracter, 
+	posible putchar la funcion en si está bien
 }
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
-}
+*/

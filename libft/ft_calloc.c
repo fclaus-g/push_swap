@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/14 16:08:52 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/24 11:40:51 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	ft_isdigit(int c)
+#include "libft.h"
+// Asigna espacio de memoria contiguo rellenando la memoria con 0
+// RETURN puntero a la memoria asignada
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
+	void	*mem;
 
-size_t	ft_strlen(const char *s)
-{
-	int	length;
-
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
+	mem = malloc(count * size);
+	if (mem == 0)
+		return (mem);
+	ft_bzero (mem, count * size);
+	return (mem);
 }

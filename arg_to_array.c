@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:15:12 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/06 12:22:14 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:06:11 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ long int	ft_longatoi(const char *str)
 	while (ft_isdigit(str[count]))
 	{
 		result = result * 10 + str[count] - 48;
-		//if (result > INT_MAX || result < INT_MIN)
-			//return (write_error(), 0);
+		if (result > INT_MAX || result < INT_MIN)
+			return (write_error(), 0);
 		count++;
 	}
 	return (sign * result);
@@ -52,6 +52,7 @@ void	arg_to_array(t_box *box)
 	box->len = i;
 	box->alen = i;
 	box->blen = 0;
+	free_matrix(box->arg);
 	printa(box->stack_a, box->len);
 }
 
@@ -80,4 +81,18 @@ size_t	ft_mtrlen(char **matriz)
 	while (matriz[i] != NULL)
 		i++;
 	return (i);	
+}
+
+void	*free_matrix(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	while (matrix[i] != NULL)
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
+	return (0);
 }

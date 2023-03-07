@@ -6,16 +6,11 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:05:52 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/06 11:05:28 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:45:30 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
-}
 
 int ft_checknumber(t_box *box)
 {
@@ -93,4 +88,25 @@ int	*simplifier(t_box *box)
 	free (box->stack_a);
 	return (aux);
 }
-	
+
+int	in_order(t_box *box)
+{
+	int	i;
+	int	c;
+
+	i = 0;
+	while (i < box->len)
+	{
+		c = i + 1;
+		while (c < box->len)
+		{
+			if (box->stack_a[i] > box->stack_a[c])
+			{
+				return (0);
+			}
+			c++;
+		}
+		i++;
+	}
+	return (1);
+}

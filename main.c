@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/06 12:29:36 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:55:08 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ void	printa(int *array, int len)
 		printf ("%d\n", array[c]);
 		c++;
 	}
+}
+void free_stacks(t_box *box)
+{
+	free (box->stack_a);
+	free (box->stack_b);
+	return;
 }
 
 int	main(int ac, char **av)
@@ -39,6 +45,8 @@ int	main(int ac, char **av)
 	arg_to_array(&box);
 	if(check_repeat(&box) == 0)
 		return(write_error(), 0);
+	if (in_order(&box) == 1)
+		return(write(1, "order", 5), 0);
 	box.stack_a = simplifier(&box);
 	printa (box.stack_a, box.len);
 	return (0);

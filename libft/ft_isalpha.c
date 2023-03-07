@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/09/23 16:00:03 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/09/29 14:03:15 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isalpha(int c)
 {
-	if (c >= '0' && c <= '9')
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	else
 		return (0);
 }
-
-size_t	ft_strlen(const char *s)
+/*
+#include <stdio.h>
+int main(void)
 {
-	int	length;
+    int n;
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
-}
+    n = 2;
+    printf ("%d\n", ft_isalpha(n));
+    return(0);
+}*/

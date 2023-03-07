@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/11/02 16:54:58 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/11/04 15:46:10 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
+	t_list	*container;
+	t_list	*new;
 
-size_t	ft_strlen(const char *s)
-{
-	int	length;
-
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
+	new = 0;
+	while (lst)
+	{
+		container = ft_lstnew((*f)(lst->content));
+		if (!container)
+		{
+			ft_lstclear(&container, del);
+			return (0);
+		}
+		ft_lstadd_back(&new, container);
+		lst = lst->next;
+	}
+	return (new);
 }

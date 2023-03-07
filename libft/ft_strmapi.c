@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/10/26 16:46:35 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/10/26 17:11:12 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
+	size_t	count;
+	char	*new;
+
+	if (s == 0)
 		return (0);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	length;
-
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
+	count = 0;
+	new = (char *)malloc(sizeof(char) * (ft_strlen(s)) + 1);
+	if (new == 0)
+		return (0);
+	while (s[count])
+	{
+		new[count] = f(count, s[count]);
+		count++;
+	}
+	new[count] = 0;
+	return (new);
 }

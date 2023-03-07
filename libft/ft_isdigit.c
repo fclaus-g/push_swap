@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/09/23 16:52:59 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/09/30 12:27:04 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -20,17 +20,16 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	int	length;
+/*
+#include <stdio.h>
+#include <ctype.h>
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
+int main(void)
 {
-	write (1, "Error\n", 6);
-}
+	int n;
+
+	n = 32;
+	printf ("%d\n", ft_isdigit(n));
+	printf ("%d\n", isdigit(n));
+	return(0);
+}*/

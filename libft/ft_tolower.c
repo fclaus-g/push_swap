@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input_utils.c                                :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:50:22 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:45:41 by fclaus-g         ###   ########.fr       */
+/*   Created: 2022/09/26 12:16:38 by fclaus-g          #+#    #+#             */
+/*   Updated: 2022/09/29 14:03:24 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_tolower(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }
+/*
+#include <unistd.h>
+#include <stdio.h>
 
-size_t	ft_strlen(const char *s)
+int	main(void)
 {
-	int	length;
+	int	a;
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-void	write_error(void)
-{
-	write (1, "Error\n", 6);
-}
+	a = 'A';
+	ft_tolower (a);
+	printf ("%d\n", ft_tolower(a));
+	a = ft_tolower(a);
+	write (1, &a, 1);
+	return (0);
+}*/
