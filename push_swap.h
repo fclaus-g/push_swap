@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:27:55 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/07 11:55:03 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/13 10:23:55 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,14 @@ void	rotate_ab(t_box *box);
 void	reverse_a(t_box *box);
 void	reverse_b(t_box *box);
 void	reverse_ab(t_box *box);
+
+//sorting.c
+void	sort2(t_box *box);
+void	sort3(t_box *box);
+void	sort4y5(t_box *box);
+void ft_sorting(t_box *box);
+
+//sorting_utils.c
+int	ft_locate_min(int *array, int len);
 
 # endif

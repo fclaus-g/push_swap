@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 13:05:30 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/07 11:34:53 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:03:11 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,37 @@ o ningún elemento. Por ejemplo:
 A: 8 3 9
 sa
 A: 3 8 9*/
-void    swap_a(t_box *box)
+void	swap_a(t_box *box)
 {
-    int i;
+	int i;
 
-    i = 0;
-    if (box->alen > 1)
-    {
-        i = box->stack_a[0];
-        box->stack_a[0] = box->stack_a[1];
-        box->stack_a[1] = i;
-        write (1,"sa\n", 3);
-    }
+	i = 0;
+	if (box->alen > 1)
+	{
+		i = box->stack_a[0];
+		box->stack_a[0] = box->stack_a[1];
+		box->stack_a[1] = i;
+		write (1,"sa\n", 3);
+	}
 }
 
-void    swap_b(t_box *box)
+void	swap_b(t_box *box)
 {
-    int i;
+	int i;
 
-    i = 0;
-    if (box->blen > 0)
-    {
-        i = box->stack_b[0];
-        box->stack_b[0] = box->stack_b[1];
-        box->stack_b[1] = i;
-        write (1,"sb\n", 3);
-    }
+	i = 0;
+	if (box->blen > 0)
+	{
+		i = box->stack_b[0];
+		box->stack_b[0] = box->stack_b[1];
+		box->stack_b[1] = i;
+		write (1,"sb\n", 3);
+	}
 }
 /*Antes de hacer ss hay que mutear los write de pa y pb*/
-void    swap_ab(t_box *box)
+void	swap_ab(t_box *box)
 {
-    swap_a(&box);
-    swap_b(&box);
-    write (1,"ss\n", 3);
+	swap_a(box);
+	swap_b(box);
+	write (1,"ss\n", 3);
 }

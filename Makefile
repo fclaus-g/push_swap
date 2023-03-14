@@ -6,7 +6,7 @@
 #    By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 13:18:00 by fernandocla       #+#    #+#              #
-#    Updated: 2023/03/04 13:55:17 by fernandocla      ###   ########.fr        #
+#    Updated: 2023/03/12 19:40:28 by fernandocla      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.c \
 	check_input.c check_input_utils.c arg_to_array.c save_args.c \
+	push.c swap.c reverse.c rotate.c sorting.c sorting_utils.c
 
 OBJ = $(SRC:.c=.o)
 

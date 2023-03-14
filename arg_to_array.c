@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_to_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:15:12 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/07 11:06:11 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/10 09:59:46 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ void	arg_to_array(t_box *box)
 	i = 0;
 	while (box->arg[i] != NULL)
 	{
-		box->stack_a[i] = ft_longatoi(box->arg[i]);
+		box->stack_a[i] = ft_longatoi (box->arg[i]);
 		i++;
 	}
 	box->len = i;
 	box->alen = i;
 	box->blen = 0;
-	free_matrix(box->arg);
-	printa(box->stack_a, box->len);
+	free_matrix (box->arg);
+	printa (box->stack_a, box->len);
 }
 
 int	*ft_arraycpy(int *dst, int *array, int len)
@@ -68,7 +68,7 @@ int	*ft_arraycpy(int *dst, int *array, int len)
 		dst[c] = array[c];
 		c++;
 	}
-	return(dst);
+	return (dst);
 }
 
 size_t	ft_mtrlen(char **matriz)

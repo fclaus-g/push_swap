@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   save_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:08:38 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/07 11:42:43 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:27:42 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int save_args(t_box *box, int ac, char **av)
 {
-    int i;
+	int i;
 
-    i = 0;
-    if (ac == 2)
-    	box->arg = ft_split(av[1], ' ');		
+	i = 0;
+	if (ac == 2)
+		box->arg = ft_split(av[1], ' ');		
 	else 
 	{
 		box->arg = malloc(sizeof(char*) * ac);
@@ -31,7 +31,7 @@ int save_args(t_box *box, int ac, char **av)
 		}
 		box->arg[i] = NULL;
 	}
-    return (1);
+	return (1);
 }
 
 char	*ft_strcpy(char *dst, const char *src)
