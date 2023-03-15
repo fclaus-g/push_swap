@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:52:10 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/13 09:57:08 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/15 11:00:14 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ B: 5 9
 pa
 A: 5 1 3 4
 B: 9*/
-void    push_a(t_box *box)
+void	push_a(t_box *box)
 {
-	int i;
+	int	i;
 
-   
 	if (box->blen > 0)
 	{
 		i = box->alen;
@@ -36,20 +35,19 @@ void    push_a(t_box *box)
 		while (i < box->blen)
 		{
 			box->stack_b[i] = box->stack_b[i + 1];
-			i++; 
+			i++;
 		}
 		box->alen++;
 		box->blen--;
 		write (1, "pa\n", 3);
 	}
-	return;
+	return ;
 }
 
-void    push_b(t_box *box)
+void	push_b(t_box *box)
 {
-	int i;
+	int	i;
 
-  
 	if (box->alen > 0)
 	{
 		i = box->blen;
@@ -68,5 +66,5 @@ void    push_b(t_box *box)
 		box->alen--;
 		write (1, "pb\n", 3);
 	}
-	return;
+	return ;
 }

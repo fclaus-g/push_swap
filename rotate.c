@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 13:37:34 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/10 10:27:38 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/15 10:45:29 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
  A: 2 5 8 9*/
 void	rotate_a(t_box *box)
 {
-	int c;
-	int aux;
+	int	c;
+	int	aux;
 
-	if(box->alen > 0)
+	if (box->alen > 0)
 	{
 		c = 0;
 		aux = box->stack_a[0];
@@ -37,10 +37,10 @@ void	rotate_a(t_box *box)
 
 void	rotate_b(t_box *box)
 {
-	int c;
-	int aux;
+	int	c;
+	int	aux;
 
-	if(box->blen > 0)
+	if (box->blen > 0)
 	{
 		c = 0;
 		aux = box->stack_b[0];

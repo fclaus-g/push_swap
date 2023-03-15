@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_to_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 10:15:12 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/10 09:59:46 by fernandocla      ###   ########.fr       */
+/*   Created: 2023/03/15 10:34:08 by fclaus-g          #+#    #+#             */
+/*   Updated: 2023/03/15 10:38:59 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ size_t	ft_mtrlen(char **matriz)
 		return (0);
 	while (matriz[i] != NULL)
 		i++;
-	return (i);	
+	return (i);
 }
 
 void	*free_matrix(char **matrix)

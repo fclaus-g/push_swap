@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:05:52 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/13 10:02:35 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/15 10:58:00 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_checknumber(t_box *box)
+int	ft_checknumber(t_box *box)
 {
 	int	c;
-	int i;
+	int	i;
 
 	i = 1;
 	while (box->arg[i] != NULL)
@@ -27,16 +27,16 @@ int ft_checknumber(t_box *box)
 		{
 			if (!ft_isdigit(box->arg[i][c]))
 			{
-				return(0);
-			}	
-			c++;	
+				return (0);
+			}
+			c++;
 		}
 		i++;
 	}
 	return (1);
 }
 
-int check_repeat(t_box *box)
+int	check_repeat(t_box *box)
 {
 	int	i;
 	int	c;
@@ -54,7 +54,7 @@ int check_repeat(t_box *box)
 			{
 				write_error();
 				free(box->stack_a);
-				return(0);	
+				return (0);
 			}	
 			c++;
 		}
@@ -68,7 +68,7 @@ int	*simplifier(t_box *box)
 	size_t	c;
 	size_t	i;
 	size_t	num;
-	int	*aux;
+	int		*aux;
 
 	i = 0;
 	aux = malloc(sizeof(int) * box->len);
@@ -76,11 +76,11 @@ int	*simplifier(t_box *box)
 	{
 		num = 1;
 		c = 0;
-		while(c < (size_t)box->len)
+		while (c < (size_t)box->len)
 		{
 			if (box->stack_a[i] > box->stack_a[c])
 				num++;
-			c++;			
+			c++;
 		}
 		aux[i] = num;
 		i++;

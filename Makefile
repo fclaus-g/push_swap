@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+         #
+#    By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/04 13:18:00 by fernandocla       #+#    #+#              #
-#    Updated: 2023/03/12 19:40:28 by fernandocla      ###   ########.fr        #
+#    Created: 2023/03/15 10:36:04 by fclaus-g          #+#    #+#              #
+#    Updated: 2023/03/15 10:49:58 by fclaus-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 NAME = push_swap
 
