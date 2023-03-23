@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_to_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:34:08 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/15 10:38:59 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:20:09 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	arg_to_array(t_box *box)
 	box->alen = i;
 	box->blen = 0;
 	free_matrix (box->arg);
-	printa (box->stack_a, box->len);
 }
 
 int	*ft_arraycpy(int *dst, int *array, int len)

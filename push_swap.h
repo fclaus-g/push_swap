@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:27:55 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/15 11:08:08 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:01:21 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ typedef struct s_box
 	int		len;
 	int		alen;
 	int		blen;
+	int		cost[2];
+	int		recost[2];
 
 }t_box;
 
 void		printa(int *array, int len);
-
+void	checkab(t_box *box);
 //-----CHEQUEO DE ENTRADA------
 
 //check_input_utils.c 
@@ -81,8 +83,19 @@ void		reverse_ab(t_box *box);
 void		sort2(t_box *box);
 void		sort3(t_box *box);
 void		sort4y5(t_box *box);
+void		bigsort(t_box *box);
 void		ft_sorting(t_box *box);
 
 //sorting_utils.c
 int			ft_locate_min(int *array, int len);
+void	a_to_b(t_box *box);
+void	best_pusha(t_box *box);
+int	a_moves(t_box *box, int n);
+int	suma_abs(int x, int y);
+
+//exec_rotates.c
+void	exec_rotates(t_box *box);
+void	rr_up(t_box *box, int x, int y);
+void	rrr_down(t_box *box, int x, int y);
+
 #endif

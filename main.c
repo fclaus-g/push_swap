@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/15 11:07:36 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:29:51 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void checkab(t_box *box)
+{
+	printf("stack a: ");
+	printa(box->stack_a, box->alen);
+	printf("\n");
+	printf("stack b: ");
+	printa(box->stack_b, box->blen);
+}
 
 void	printa(int *array, int len)
 {
@@ -19,7 +28,7 @@ void	printa(int *array, int len)
 	c = 0;
 	while (c < len)
 	{
-		printf ("%d\n", array[c]);
+		printf ("%d ", array[c]);
 		c++;
 	}
 }
@@ -50,6 +59,6 @@ int	main(int ac, char **av)
 	box.stack_a = simplifier(&box);
 	printa(box.stack_a, box.len);
 	ft_sorting(&box);
-	printa(box.stack_a, box.len);
+	//printa(box.stack_a, box.len);
 	return (0);
 }

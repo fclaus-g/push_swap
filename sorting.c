@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:35:35 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/15 11:09:26 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:13:08 by fernandocla      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,20 @@ void	sort4y5(t_box *box)
 	return (push_a(box), push_a(box));
 }
 
+void	bigsort(t_box *box)
+{
+	a_to_b(box);
+	sort3(box); 
+	while (box->blen > 0)
+	{
+		best_pusha(box);
+		exec_rotates(box);
+		push_a(box);		
+	}
+	
+	checkab(box);
+}
+
 void	ft_sorting(t_box *box)
 {
 	if (box->alen == 2)
@@ -79,4 +93,7 @@ void	ft_sorting(t_box *box)
 		return (sort3(box));
 	if (box->alen > 3 && box->alen < 6)
 		return (sort4y5(box));
+	if (box->alen > 5)
+		return (bigsort(box));
 }
+
