@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+         #
+#    By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 10:36:04 by fclaus-g          #+#    #+#              #
-#    Updated: 2023/03/23 18:04:27 by fernandocla      ###   ########.fr        #
+#    Updated: 2023/03/24 15:57:07 by fclaus-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = main.c \
 	check_input.c check_input_utils.c arg_to_array.c save_args.c \
 	push.c swap.c reverse.c rotate.c sorting.c sorting_utils.c \
-	bigsort.c exec_rotates.c
+	exec_rotates.c
 
 OBJ = $(SRC:.c=.o)
 

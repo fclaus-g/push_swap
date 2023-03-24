@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:35:35 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/23 19:13:08 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/24 17:53:11 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort2(t_box *box)
 {
 	if (box->alen == 2)
 	{
-		swap_a(box);
+		swap_a(box, 1);
 		printa(box->stack_a, 2);
 	}
 }
@@ -33,15 +33,15 @@ void	sort3(t_box *box)
 		b = box->stack_a[1];
 		c = box->stack_a[2];
 		if (a < b && b > c && c > a)
-			return (swap_a(box), rotate_a(box));
+			return (swap_a(box, 1), rotate_a(box, 1));
 		if (a < b && b > c && c < a)
-			return (reverse_a(box));
+			return (reverse_a(box, 1));
 		if (a > b && b > c && c < a)
-			return (rotate_a(box), swap_a(box));
+			return (rotate_a(box, 1), swap_a(box, 1));
 		if (a > b && b < c && c > a)
-			return (swap_a(box));
+			return (swap_a(box, 1));
 		if (a > b && b < c && c < a)
-			return (rotate_a(box));
+			return (rotate_a(box, 1));
 	}
 }
 
@@ -57,13 +57,13 @@ void	sort4y5(t_box *box)
 		if (min_pos <= box->alen / 2)
 		{
 			while (box->stack_a[0] != target_pos)
-				rotate_a(box);
+				rotate_a(box, 1);
 			push_b(box);
 		}
 		else if (min_pos > box->alen / 2)
 		{
 			while (box->stack_a[0] != target_pos)
-				reverse_a(box);
+				reverse_a(box, 1);
 			push_b(box);
 		}
 	}
@@ -79,10 +79,10 @@ void	bigsort(t_box *box)
 	{
 		best_pusha(box);
 		exec_rotates(box);
-		push_a(box);		
+		checkab(box);
+		push_a(box);
 	}
-	
-	checkab(box);
+		
 }
 
 void	ft_sorting(t_box *box)

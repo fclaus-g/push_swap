@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:27:55 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/23 18:01:21 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/24 18:16:47 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct s_box
 	int		alen;
 	int		blen;
 	int		cost[2];
-	int		recost[2];
 
 }t_box;
 
+void	ft_exit(void);
 void		printa(int *array, int len);
 void	checkab(t_box *box);
 //-----CHEQUEO DE ENTRADA------
@@ -65,18 +65,18 @@ void		push_a(t_box *box);
 void		push_b(t_box *box);
 
 //swap.c
-void		swap_a(t_box *box);
-void		swap_b(t_box *box);
+void		swap_a(t_box *box, int n);
+void		swap_b(t_box *box, int n);
 void		swap_ab(t_box *box);
 
 //rotate.c
-void		rotate_a(t_box *box);
-void		rotate_b(t_box *box);
+void		rotate_a(t_box *box, int n);
+void		rotate_b(t_box *box, int n);
 void		rotate_ab(t_box *box);
 
 //reverse.c
-void		reverse_a(t_box *box);
-void		reverse_b(t_box *box);
+void		reverse_a(t_box *box, int n);
+void		reverse_b(t_box *box, int n);
 void		reverse_ab(t_box *box);
 
 //sorting.c
@@ -92,6 +92,7 @@ void	a_to_b(t_box *box);
 void	best_pusha(t_box *box);
 int	a_moves(t_box *box, int n);
 int	suma_abs(int x, int y);
+int	ft_locate_max(int *array, int len);
 
 //exec_rotates.c
 void	exec_rotates(t_box *box);

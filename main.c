@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/23 19:29:51 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/24 18:05:03 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void checkab(t_box *box)
 {
-	printf("stack a: ");
+	printf("\nstack a: ");
 	printa(box->stack_a, box->alen);
-	printf("\n");
 	printf("stack b: ");
 	printa(box->stack_b, box->blen);
 }
@@ -31,6 +30,7 @@ void	printa(int *array, int len)
 		printf ("%d ", array[c]);
 		c++;
 	}
+	printf("\n");
 }
 
 void	free_stacks(t_box *box)
@@ -38,6 +38,11 @@ void	free_stacks(t_box *box)
 	free (box->stack_a);
 	free (box->stack_b);
 	return ;
+}
+
+void	ft_exit(void)
+{
+	system("leaks push_swap");
 }
 
 int	main(int ac, char **av)
@@ -57,8 +62,10 @@ int	main(int ac, char **av)
 	if (in_order(&box) == 1)
 		return (free_stacks(&box), write(1, "order", 5), 0);
 	box.stack_a = simplifier(&box);
-	printa(box.stack_a, box.len);
-	ft_sorting(&box);
 	//printa(box.stack_a, box.len);
+	ft_sorting(&box);
+	printa(box.stack_a, box.len);
+	free_stacks(&box);
+	atexit(ft_exit);
 	return (0);
 }

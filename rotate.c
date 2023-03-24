@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 13:37:34 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/15 10:45:29 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:31:10 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  A: 9 2 5 8
  ra
  A: 2 5 8 9*/
-void	rotate_a(t_box *box)
+void	rotate_a(t_box *box, int n)
 {
 	int	c;
 	int	aux;
@@ -31,11 +31,12 @@ void	rotate_a(t_box *box)
 			c++;
 		}
 		box->stack_a[c] = aux;
-		write(1, "ra\n", 3);
 	}
+	if (n > 0)
+		write(1, "ra\n", 3);
 }
 
-void	rotate_b(t_box *box)
+void	rotate_b(t_box *box, int n)
 {
 	int	c;
 	int	aux;
@@ -50,13 +51,14 @@ void	rotate_b(t_box *box)
 			c++;
 		}
 		box->stack_b[c] = aux;
-		write(1, "rb\n", 3);
 	}
+	if (n > 0)
+		write(1, "rb\n", 3);
 }
 
 void	rotate_ab(t_box *box)
 {
-	rotate_a(box);
-	rotate_b(box);
+	rotate_a(box, 0);
+	rotate_b(box, 0);
 	write(1, "rr\n", 3);
 }
