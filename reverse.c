@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 13:11:14 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/24 17:50:56 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:27:38 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	reverse_a(t_box *box, int n)
 	}
 	if (n > 0)
 		write (1, "rra\n", 4);
-	printa(box->stack_a, box->alen);
+	//printa(box->stack_a, box->alen);
 }
 
 void	reverse_b(t_box *box, int n)

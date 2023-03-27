@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:35:35 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/24 17:53:11 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:17:19 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,16 @@ void	bigsort(t_box *box)
 	{
 		best_pusha(box);
 		exec_rotates(box);
-		checkab(box);
+		//checkab(box);
 		push_a(box);
+	}
+	while (box->stack_a[0] != 1)
+	{
+		if (ft_locate_min(box->stack_a, box->alen) <= box->alen / 2)
+			rotate_a(box, 1);
+		if (ft_locate_min(box->stack_a, box->alen) > box->alen / 2)
+			reverse_a(box, 1);
+
 	}
 		
 }

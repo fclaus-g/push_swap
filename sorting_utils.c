@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 13:26:43 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/24 18:20:25 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:10:54 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,13 @@ int	a_moves(t_box *box, int n)
 
 	end = box->alen - 1;
 	start = 0;
-	if (n > box->stack_a[end] && n < box->stack_a[0])
+	if ((n > box->stack_a[end] && n < box->stack_a[0]))
 		return (start);
-	while (start < box->alen)
+	while (start < box->alen - 1)
 	{
 		if (n > box->stack_a[start] && n < box->stack_a[start + 1])
 			return (start + 1);
-		else if (n > box->stack_a[end] && n < box->stack_a[end - 1])
+		else if (n < box->stack_a[end] && n > box->stack_a[end - 1])
 			return ((box->alen - end) * (-1));
 		start++;
 		end--;

@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 13:37:34 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/24 17:31:10 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:17:38 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	rotate_a(t_box *box, int n)
 		box->stack_a[c] = aux;
 	}
 	if (n > 0)
+		//checkab(box);
 		write(1, "ra\n", 3);
 }
 

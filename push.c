@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:52:10 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/24 17:29:23 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:17:45 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	push_a(t_box *box)
 		box->blen--;
 		write (1, "pa\n", 3);
 	}
+	//checkab(box);
 	return ;
 }
 
