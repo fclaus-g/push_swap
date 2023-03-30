@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/28 12:45:45 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:56:20 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ int	main(int ac, char **av)
 	box.stack_b = malloc(sizeof(int) * ft_mtrlen(box.arg));
 	arg_to_array(&box);
 	if (check_repeat(&box) == 0)
-		return (free(box.stack_b), write_error(), 0);
+		return (free_stacks(&box), write_error(), 0);
 	if (in_order(&box) == 1)
 		return (free_stacks(&box), write(1, "order", 5), 0);
 	box.stack_a = simplifier(&box);
 	//printa(box.stack_a, box.len);
 	ft_sorting(&box);
-	printa(box.stack_a, box.len);
+	//printa(box.stack_a, box.len);
 	free_stacks(&box);
-	atexit(ft_exit);
+	//atexit(ft_exit);
 	return (0);
 }

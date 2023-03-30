@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 13:26:43 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/30 11:44:19 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:38:45 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	best_pusha(t_box *box)
 	box->cost[0] = box->alen;
 	box->cost[1] = box->blen;
 	c = 0;
-	while (c < box->blen - 1)
+	while (c <= box->blen - 1)
 	{
 		if (c <= box->blen / 2)
 			aux[1] = c;
@@ -84,7 +84,8 @@ void	best_pusha(t_box *box)
 		}
 		c++;
 	}
-	printf("coste de A %d, coste de B %d\n", box->cost[0], box->cost[1]);
+
+	//printf("coste de A %d, coste de B %d\n", box->cost[0], box->cost[1]);
 }
 
 int	suma_abs(int x, int y)
@@ -110,7 +111,7 @@ int	a_moves(t_box *box, int n)
 		if (n > box->stack_a[start] && n < box->stack_a[start + 1])
 			return (start + 1);
 		else if (n < box->stack_a[end] && n > box->stack_a[end - 1])
-			return ((box->alen - end) * (-1));
+			return ((box->alen - end) * (- 1));
 		start++;
 		end--;
 	}

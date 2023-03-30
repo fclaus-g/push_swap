@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:05:52 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/23 19:29:39 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/03/30 13:55:52 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ int	check_repeat(t_box *box)
 		{
 			if (box->stack_a[c] == box->stack_a[i])
 			{
-				write_error();
-				free(box->stack_a);
+				//free(box->stack_a);
 				return (0);
 			}	
 			c++;
