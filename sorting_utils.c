@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 13:26:43 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/27 14:10:54 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:44:19 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	best_pusha(t_box *box)
 		}
 		c++;
 	}
+	printf("coste de A %d, coste de B %d\n", box->cost[0], box->cost[1]);
 }
 
 int	suma_abs(int x, int y)

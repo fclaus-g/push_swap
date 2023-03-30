@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/27 14:28:34 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:45:45 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void checkab(t_box *box)
 {
-	printf("\nstack a: ");
+	printf("stack a: ");
 	printa(box->stack_a, box->alen);
 	printf("stack b: ");
 	printa(box->stack_b, box->blen);
@@ -27,7 +27,7 @@ void	printa(int *array, int len)
 	c = 0;
 	while (c < len)
 	{
-		printf ("%d ", array[c]);
+		printf("%d ", array[c]);
 		c++;
 	}
 	printf("\n");

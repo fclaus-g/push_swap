@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:35:35 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/27 14:17:19 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:52:05 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ void	sort4y5(t_box *box)
 
 void	bigsort(t_box *box)
 {
-	a_to_b(box);
-	sort3(box); 
+	a_to_b(box);//pasamos de A a B basandonos en alen/2
+	sort3(box);//ordenamos los 3 restantes de A 
 	while (box->blen > 0)
 	{
-		best_pusha(box);
-		exec_rotates(box);
+		best_pusha(box);//elegimos el numero mas barato para mover
+		exec_rotates(box);//ejecutamos las rotaciones necesarias
 		//checkab(box);
-		push_a(box);
+		push_a(box);//mandamos a A
 	}
 	while (box->stack_a[0] != 1)
 	{
@@ -88,7 +88,6 @@ void	bigsort(t_box *box)
 			rotate_a(box, 1);
 		if (ft_locate_min(box->stack_a, box->alen) > box->alen / 2)
 			reverse_a(box, 1);
-
 	}
 		
 }
