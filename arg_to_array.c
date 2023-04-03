@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   arg_to_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fernandoclaus <fernandoclaus@student.42    +#+  +:+       +#+        */
+/*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:34:08 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/22 18:20:09 by fernandocla      ###   ########.fr       */
+/*   Updated: 2023/04/03 11:51:13 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long int	ft_longatoi(const char *str)
+long int	ft_longatoi(const char *str, t_box *box)
 {
 	size_t	count;
 	long	result;
@@ -32,8 +32,7 @@ long int	ft_longatoi(const char *str)
 	while (ft_isdigit(str[count]))
 	{
 		result = result * 10 + str[count] - 48;
-		if (result > INT_MAX || result < INT_MIN)
-			return (write_error(), 0);
+		check_limits(result, box);
 		count++;
 	}
 	return (sign * result);
@@ -46,7 +45,7 @@ void	arg_to_array(t_box *box)
 	i = 0;
 	while (box->arg[i] != NULL)
 	{
-		box->stack_a[i] = ft_longatoi (box->arg[i]);
+		box->stack_a[i] = ft_longatoi (box->arg[i], box);
 		i++;
 	}
 	box->len = i;

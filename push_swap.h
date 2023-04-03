@@ -6,15 +6,17 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:27:55 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/24 18:16:47 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:37:12 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include <stdio.h>
+# include <unistd.h>
 # include <limits.h>
+# include <stdlib.h>
 
 //definimos una estructura donde alojaremos los int 
 typedef struct s_box
@@ -29,24 +31,24 @@ typedef struct s_box
 
 }t_box;
 
-void	ft_exit(void);
-void		printa(int *array, int len);
-void	checkab(t_box *box);
 //-----CHEQUEO DE ENTRADA------
 
 //check_input_utils.c 
 int			ft_isdigit(int c);
 size_t		ft_strlen(const char *s);
 void		write_error(void);
+void		check_limits(long result, t_box *box);
+void		free_stacks(t_box *box);
 
 //check_input.c
 int			ft_checknumber(t_box *box);
 int			check_repeat(t_box *box);
 int			*simplifier(t_box *box);
 int			in_order(t_box *box);
+void		ft_putstr_fd(char *s, int fd);
 
 //arg_to_array.c
-long int	ft_longatoi(const char *str);
+long int	ft_longatoi(const char *str, t_box *box);
 void		arg_to_array(t_box *box);
 int			*ft_arraycpy(int *dst, int *array, int len);
 size_t		ft_mtrlen(char **matriz);
@@ -87,16 +89,15 @@ void		bigsort(t_box *box);
 void		ft_sorting(t_box *box);
 
 //sorting_utils.c
-int			ft_locate_min(int *array, int len);
-void	a_to_b(t_box *box);
-void	best_pusha(t_box *box);
-int	a_moves(t_box *box, int n);
-int	suma_abs(int x, int y);
-int	ft_locate_max(int *array, int len);
+void		a_to_b(t_box *box);
+void		best_pusha(t_box *box);
+int			a_moves(t_box *box, int n);
+int			suma_abs(int x, int y);
+int			ft_locate_max(int *array, int len);
 
 //exec_rotates.c
-void	exec_rotates(t_box *box);
-void	rr_up(t_box *box, int x, int y);
-void	rrr_down(t_box *box, int x, int y);
-
+void		exec_rotates(t_box *box);
+void		rr_up(t_box *box, int x, int y);
+void		rrr_down(t_box *box, int x, int y);
+int			ft_locate_min(int *array, int len);
 #endif

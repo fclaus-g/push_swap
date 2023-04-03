@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:35:35 by fernandocla       #+#    #+#             */
-/*   Updated: 2023/03/30 11:52:05 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:17:08 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 void	sort2(t_box *box)
 {
 	if (box->alen == 2)
-	{
 		swap_a(box, 1);
-		printa(box->stack_a, 2);
-	}
 }
 
 void	sort3(t_box *box)
@@ -73,14 +70,13 @@ void	sort4y5(t_box *box)
 
 void	bigsort(t_box *box)
 {
-	a_to_b(box);//pasamos de A a B basandonos en alen/2
-	sort3(box);//ordenamos los 3 restantes de A 
+	a_to_b(box);
+	sort3(box);
 	while (box->blen > 0)
 	{
-		best_pusha(box);//elegimos el numero mas barato para mover
-		exec_rotates(box);//ejecutamos las rotaciones necesarias
-		//checkab(box);
-		push_a(box);//mandamos a A
+		best_pusha(box);
+		exec_rotates(box);
+		push_a(box);
 	}
 	while (box->stack_a[0] != 1)
 	{
@@ -89,7 +85,6 @@ void	bigsort(t_box *box)
 		if (ft_locate_min(box->stack_a, box->alen) > box->alen / 2)
 			reverse_a(box, 1);
 	}
-		
 }
 
 void	ft_sorting(t_box *box)
@@ -103,4 +98,3 @@ void	ft_sorting(t_box *box)
 	if (box->alen > 5)
 		return (bigsort(box));
 }
-

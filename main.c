@@ -6,44 +6,16 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:35:51 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/30 13:56:20 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:29:39 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void checkab(t_box *box)
-{
-	printf("stack a: ");
-	printa(box->stack_a, box->alen);
-	printf("stack b: ");
-	printa(box->stack_b, box->blen);
-}
-
-void	printa(int *array, int len)
-{
-	int	c;
-
-	c = 0;
-	while (c < len)
-	{
-		printf("%d ", array[c]);
-		c++;
-	}
-	printf("\n");
-}
-
-void	free_stacks(t_box *box)
-{
-	free (box->stack_a);
-	free (box->stack_b);
-	return ;
-}
-
-void	ft_exit(void)
+/*void	ft_leaks(void)
 {
 	system("leaks push_swap");
-}
+}*/
 
 int	main(int ac, char **av)
 {
@@ -60,12 +32,9 @@ int	main(int ac, char **av)
 	if (check_repeat(&box) == 0)
 		return (free_stacks(&box), write_error(), 0);
 	if (in_order(&box) == 1)
-		return (free_stacks(&box), write(1, "order", 5), 0);
+		return (free_stacks(&box), 0);
 	box.stack_a = simplifier(&box);
-	//printa(box.stack_a, box.len);
 	ft_sorting(&box);
-	//printa(box.stack_a, box.len);
 	free_stacks(&box);
-	//atexit(ft_exit);
 	return (0);
 }

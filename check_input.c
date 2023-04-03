@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:05:52 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/30 13:55:52 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:36:51 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_checknumber(t_box *box)
 	int	c;
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (box->arg[i] != NULL)
 	{
 		c = 0;
@@ -51,10 +51,7 @@ int	check_repeat(t_box *box)
 		while (c < x)
 		{
 			if (box->stack_a[c] == box->stack_a[i])
-			{
-				//free(box->stack_a);
 				return (0);
-			}	
 			c++;
 		}
 		i++;
@@ -108,4 +105,16 @@ int	in_order(t_box *box)
 		i++;
 	}
 	return (1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	count;
+
+	count = 0;
+	while (s[count])
+	{
+		write (fd, &s[count], 1);
+		count++;
+	}
 }

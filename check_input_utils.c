@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:34:39 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/03/15 10:41:30 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:38:58 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,22 @@ size_t	ft_strlen(const char *s)
 
 void	write_error(void)
 {
-	write (1, "Error\n", 6);
+	ft_putstr_fd("Error", 2);
+}
+
+void	check_limits(long result, t_box *box)
+{
+	if (result > INT_MAX || result < INT_MIN)
+	{
+		write_error();
+		free_stacks(box);
+		exit(-1);
+	}
+}
+
+void	free_stacks(t_box *box)
+{
+	free (box->stack_a);
+	free (box->stack_b);
+	return ;
 }

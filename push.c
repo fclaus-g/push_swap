@@ -6,13 +6,14 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:52:10 by usuario42         #+#    #+#             */
-/*   Updated: 2023/03/30 13:39:09 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:13:08 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*pa (empuje A): tome el primer elemento en la parte superior
-de la pila B y colóquelo en la parte superior de la pila A. 
+/*pa (empuje A): tome el primer elemento en la parte 
+superior de la pila B y colóquelo en la parte 
+superior de la pila A. 
 No haga nada si B está vacío. Por ejemplo:
 A: 1 3 4
 B: 5 9
@@ -41,7 +42,6 @@ void	push_a(t_box *box)
 		box->blen--;
 		write (1, "pa\n", 3);
 	}
-	//checkab(box);
 	return ;
 }
 
