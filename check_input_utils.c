@@ -6,7 +6,7 @@
 /*   By: fclaus-g <fclaus-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:34:39 by fclaus-g          #+#    #+#             */
-/*   Updated: 2023/04/03 12:38:58 by fclaus-g         ###   ########.fr       */
+/*   Updated: 2023/04/06 09:34:19 by fclaus-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	check_limits(long result, t_box *box)
 	{
 		write_error();
 		free_stacks(box);
-		exit(-1);
+		exit(0);
 	}
 }
 
